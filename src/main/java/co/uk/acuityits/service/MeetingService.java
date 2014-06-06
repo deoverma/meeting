@@ -50,7 +50,7 @@ public class MeetingService {
         }
 
         Map<Date, List<Slot>> bookings = repository.getBookings();
-
+        System.out.println("**************************************");
         for (Date dateKey : bookings.keySet()) {
             List<Slot> slots = bookings.get(dateKey);
             Collections.sort(slots, new SlotComparator());
@@ -63,6 +63,7 @@ public class MeetingService {
                         + " " + slot.getEmployeeId());
             }
         }
+        System.out.println("**************************************");
     }
 
     private List<MeetingRequest> processFile(File file)
